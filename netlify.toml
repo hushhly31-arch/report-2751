@@ -1,0 +1,21 @@
+[build]
+  command = "bun run build:web"
+  publish = "packages/web/dist"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "bun run build:web"
+  publish = "packages/web/dist"
+
+[context.deploy-preview]
+  command = "bun run build:web"
+  publish = "packages/web/dist"
+
+[context.branch-deploy]
+  command = "bun run build:web"
+  publish = "packages/web/dist"
